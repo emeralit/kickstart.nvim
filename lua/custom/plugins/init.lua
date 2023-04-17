@@ -8,5 +8,13 @@
 return {
 	'jalvesaq/Nvim-R',
 	'nvim-telescope/telescope-bibtex.nvim',
-	'jalvesaq/zotcite',
+	{
+		'jalvesaq/zotcite',
+		config = function()
+			-- opzioni per zotcite
+			vim.g['$ZoteroSQLpath'] = "/Users/mimmo/Zotero/zotero.sqlite"
+			vim.g['zotcite_conceallevel'] = 0
+			vim.g['zotcite_quarto_render'] = 1
+		end,
+	},
 }

@@ -502,10 +502,6 @@ cmp.setup {
   },
 }
 
--- opzioni per zotcite
-vim.g['$ZoteroSQLpath'] = "/Users/mimmo/Zotero/zotero.sqlite"
-vim.g['zotcite_conceallevel'] = 0
-vim.g['zotcite_quarto_render'] = 1
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
