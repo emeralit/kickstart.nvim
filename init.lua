@@ -95,8 +95,13 @@ require('lazy').setup({
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'jalvesaq/cmp-nvim-r',
-      'jalvesaq/cmp-zotcite' },
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
+      'jalvesaq/cmp-zotcite',
+      'jalvesaq/cmp-nvim-r',
+    },
   },
 
   -- Useful plugin to show you pending keybinds.
@@ -118,10 +123,11 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'catppuccin/nvim',
+    name = 'catppuccin',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
 
@@ -132,7 +138,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'catppuccin',
         component_separators = '|',
         section_separators = '',
       },
@@ -302,8 +308,8 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'html', 'lua', 'python', 'css', 'gitcommit', 'json', 'vimdoc', 'vim', 'latex',
-    'markdown', 'markdown_inline', 'yaml' },
+  ensure_installed = { 'r', 'query', 'html', 'lua', 'python', 'css', 'gitcommit', 'json', 'vimdoc', 'vim', 'latex',
+    'bash', 'markdown', 'markdown_inline', 'yaml' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -499,6 +505,8 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'cmp_zotcite' },
+    { name = 'cmp_nvim_r' },
   },
 }
 
