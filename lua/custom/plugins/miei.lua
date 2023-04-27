@@ -8,7 +8,6 @@
 return {
 	'jalvesaq/Nvim-R',
 	'jalvesaq/R-Vim-runtime',
-	'nvim-telescope/telescope-bibtex.nvim',
 	{
 		'jalvesaq/zotcite',
 		config = function()
@@ -18,4 +17,5 @@ return {
 			vim.g['zotcite_quarto_render'] = 1
 		end,
 	},
+	'nvim-telescope/telescope-bibtex.nvim',
 }
