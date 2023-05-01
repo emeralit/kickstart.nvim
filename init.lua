@@ -122,16 +122,6 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'catppuccin'
-    end,
-  },
-
-  {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
@@ -311,7 +301,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'r', 'query', 'html', 'lua', 'python', 'css', 'gitcommit', 'json', 'vimdoc', 'vim', 'latex',
+  ensure_installed = { 'r', 'query', 'html', 'lua', 'css', 'gitcommit', 'json', 'vimdoc', 'vim', 'latex',
     'bash', 'markdown', 'markdown_inline', 'yaml' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
@@ -512,7 +502,6 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'cmp_zotcite' },
     { name = 'cmp_nvim_r' },
-    { name = 'otter' },
     { name = 'treesitter' },
   },
 }
