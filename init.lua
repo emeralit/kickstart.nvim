@@ -97,7 +97,9 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
-      'L3MON4D3/LuaSnip',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-nvim-lua',
       'saadparwaiz1/cmp_luasnip',
       'jalvesaq/cmp-zotcite',
       'jalvesaq/cmp-nvim-r',
@@ -229,7 +231,7 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt = 'menu,menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
@@ -506,5 +508,7 @@ cmp.setup {
   },
 }
 
+require('luasnip.loaders.from_vscode').lazy_load()
+--
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
