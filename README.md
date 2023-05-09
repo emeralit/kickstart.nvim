@@ -1,5 +1,7 @@
 # kickstart.nvim
 
+Questo è un fork e le modifiche sono miei esperimenti. Ho cercato di lasciare intatto il file init.lua (più o meno) e giocato con i moduli presenti in lua/custom/plugins/. Il resto del README è quello originale.
+
 ### Introduction
 
 A starting point for Neovim that is:
