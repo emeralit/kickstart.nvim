@@ -103,7 +103,6 @@ require('lazy').setup({
       'saadparwaiz1/cmp_luasnip',
       'jalvesaq/cmp-zotcite',
       'jalvesaq/cmp-nvim-r',
-      'rafamadriz/friendly-snippets',
     },
   },
 
