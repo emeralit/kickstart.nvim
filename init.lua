@@ -40,7 +40,7 @@ P.S. You can delete this when you're done too. It's your config now :)
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
+vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -85,7 +85,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'j-hui/fidget.nvim',       tag = "legacy", opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -142,19 +142,6 @@ require('lazy').setup({
         component_separators = '|',
         section_separators = '',
       },
-    },
-  },
-
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-      show_current_context = true,
-      show_current_context_start = true,
     },
   },
 
@@ -318,8 +305,15 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = { 'r', 'query', 'html', 'lua', 'css', 'gitcommit', 'json', 'vimdoc', 'vim', 'latex',
     'bash', 'markdown', 'markdown_inline', 'yaml' },
 
-  -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- Automatically install missing parsers when entering buffer
+  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+  auto_install = true,
+
+  -- List of parsers to ignore installing (or "all")
+  ignore_install = { "javascript" },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
